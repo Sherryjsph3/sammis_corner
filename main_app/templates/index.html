@@ -4,10 +4,10 @@
             <h1>Posts Index</h1>
             {% for post in posts %} 
             <a href='/posts/{{post.id}}'>
-            <p>
-                {{ post.text }} 
             
-            </p>
+               <img src='{{ post.image_one.url }}'>
+            
+            
         </a>
             {% endfor %}
 {% endblock %}
