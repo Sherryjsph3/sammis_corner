@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+            <h6>{{ post.created_on }}</h6>
+
+            <h1>{{ post.title }}</h1>
+        
+            <img src='{{ post.image_one.url }}'>
+
+            <img src='{{ post.image_one.url }}'>
+
+            <p>{{ post.blurb }}</p>
+
+            <a href='/posts/{{post.id}}/delete'>delete</a>
+            <br/>
+            <a href='/posts/{{post.id}}/update'>update</a>
+            
+{% endblock %}
