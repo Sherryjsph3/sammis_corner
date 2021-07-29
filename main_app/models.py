@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.base import Model
+from django.contrib.auth.models import User
 
 STATUS = (
     (0, 'Draft'),
@@ -14,6 +15,8 @@ class Post(models.Model):
     blurb = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
     class Meta:
         ordering = ['-created_on']

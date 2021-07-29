@@ -20,7 +20,7 @@
                 <li>
                     <a href="/about">about</a>
                 </li>
-                
+                {% if user.is_authenticated %}
                 <li>
                     <a href="/posts">blog</a>
                 </li>
@@ -37,9 +37,18 @@
                     <a href="/posts/new">new post</a>
                 </li>
 
+                <li>
+                    <a href="/accounts/logout">logout</a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="/accounts/login">login</a>
+                </li>
 
-            
-                
+                <li>
+                    <a href="/accounts/register">signup</a>
+                </li>
+                {% endif %}
             </ul>
         </nav>
     </header>
