@@ -9,7 +9,7 @@
 
             <img src='{{ post.image_one.url }}'>
 
-            <p>{{ post.blurb }}</p>
+            <p>{{ post.blurb|safe }}</p>
 
             <a href='/posts/{{post.id}}/delete'>delete</a>
             <br/>

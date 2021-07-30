@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
@@ -14,3 +15,5 @@ urlpatterns = [
     path('posts/<int:pk>/update/', views.PostUpdate.as_view()),
     path('accounts/register/', views.register),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
