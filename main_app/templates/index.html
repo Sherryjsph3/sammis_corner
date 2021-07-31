@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-            <h1>Posts Index</h1>
+            <h1>- blog -</h1>
+            <hr>
             {% for post in posts %} 
             <a href='/posts/{{post.id}}'>
             
-               <img src='{{ post.image_one.url }}'>
-            
-            
-        </a>
+            <img src='{{ post.image_one.url }}'>
+            </a>
             {% endfor %}
+            <button>more</button>
 {% endblock %}

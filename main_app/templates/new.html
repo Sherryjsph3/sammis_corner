@@ -9,6 +9,7 @@
 {% else %}
 
 <h1>create a new post</h1>
+<hr>
 
 {% endif %}
 
@@ -17,8 +18,8 @@
     {% csrf_token %}
     {{ form.media }}
     {{ form }}
-
-    <input type='submit' value='create'/>
+    
+    <input type='submit' value='post'/>
 
 </form>
 

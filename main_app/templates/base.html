@@ -5,13 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- local CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     
     <title>sammi's Corner</title>
 </head>
 <body>
     <header>
         <h1>sammi's corner</h1>
+        <h4>fuelled by coffee +</h4>
+        <h4>a killer outfit</h4>
+    
         <nav>
             <ul>
                 <li>
@@ -58,7 +65,42 @@
 
             {% endblock %}
         </main>
-    
+        <hr>
+        
+        <h4>- live in the now, as you are -</h4>   
+    <div>
+        <ul>
+            <li>
+                <a href="/">home</a>
+            </li>
+
+            <li>
+                <a href="/about">about</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="/posts">blog</a>
+            </li>
+
+            <li>
+                <a href="/jewelry">jewelry</a>
+            </li>
+
+            <li>
+                <a href="/beauty">beauty</a>
+            </li>
+
+            <li>
+                <a href="/posts/new">new post</a>
+            </li>
+            {% endif %}
+        </ul>
+        <i class="fab fa-pinterest"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-tiktok"></i>
+        <i class="fab fa-youtube"></i>
+        
+    </div>
     <footer>
         <p>copyright &copy; all rights reserved - sammi's corner 2021</p>
     </footer>
