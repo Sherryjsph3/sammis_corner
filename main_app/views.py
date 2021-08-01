@@ -39,6 +39,18 @@ def register(request):
         'errors': errors
         }) 
 
+def search_posts(request):
+    if request.method == 'POST':
+        searched = request.POST[ 'searched']
+        posts = Post.objects.filter(blurb__contains=searched)
+        return render(request, 
+        'search_posts.html', 
+        {'searched': searched,
+        'posts': posts})
+    else:
+        return render(request, 
+        'search_posts.html', {})
+
 
 #Class base views
 class PostIndex(LoginRequiredMixin, ListView):

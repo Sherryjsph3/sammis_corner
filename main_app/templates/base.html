@@ -45,7 +45,7 @@
                     <a href="/posts/new">new post</a>
                 </li>
 
-                <li>
+                <li>    
                     <a href="/accounts/logout">logout</a>
                 </li>
                 {% else %}
@@ -58,6 +58,11 @@
                 </li>
                 {% endif %}
             </ul>
+            <form action="{% url 'search-posts' %}" method="POST">
+                {% csrf_token %}
+                <input type="search" placeholder="search posts" name="searched"/>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
         </nav>
     </header>
         <main>
