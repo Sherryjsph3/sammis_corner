@@ -1,0 +1,1 @@
+web: gunicorn sammis_corner.wsgi
