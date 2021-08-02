@@ -11,9 +11,33 @@
             <img src='{{ post.image_two.url }}'>
 
             <p>{{ post.blurb|safe }}</p>
-
             <a href='/posts/{{post.id}}/delete'>delete</a>
             <br/>
             <a href='/posts/{{post.id}}/update'>update</a>
+            <br/><br/>
+            
+            <form action="{% url 'like-post' post.pk %}" method="POST">
+                {% csrf_token %}
+                <button type='submit' name='post_id' value='{{ post.id }}'>like</button> - {{ total_likes }} likes
+            </form>
+
+            <br/>  
+            <h2>comments...</h2>
+            <br>
+            {% if not post.comments.all %}
+                no comments yet...<a href="{% url 'add-comment' post.pk%}">add comment</a>
+            {% else %}
+            <a href="{% url 'add-comment' post.pk%}">add comment</a>
+            <br/><br/>
+                {% for comment in post.comments.all %}
+                    <strong>
+                        {{ comment.name}} - 
+                        {{ comment.date_added }}
+                    </strong> 
+                    <br/> 
+                    {{ comment.body }}
+                    <br/><br/>  
+                {% endfor %} 
+            {% endif %}
             
 {% endblock %}

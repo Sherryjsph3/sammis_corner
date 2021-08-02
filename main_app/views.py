@@ -1,11 +1,15 @@
 
-from django.shortcuts import redirect, render
+from django.contrib.auth import forms
+from django.http import HttpResponseRedirect
+from django.shortcuts import redirect, render, get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-from .models import Post
+from django.urls import reverse
+from.forms import CommentForm
+from .models import Comment, Post
 
 
 # Create your views here.
@@ -51,6 +55,11 @@ def search_posts(request):
         return render(request, 
         'search_posts.html', {})
 
+def LikeView(request, pk):
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('post-detail', args=[str(pk)]))
+
 
 #Class base views
 class PostIndex(LoginRequiredMixin, ListView):
@@ -60,11 +69,18 @@ class PostIndex(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return Post.objects.filter(user=self.request.user)
-
+    
 class PostDetail(LoginRequiredMixin, DetailView):
     model = Post
     template_name = 'detail.html'
-    context_object_name = 'post'    
+    context_object_name = 'post' 
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        stuff = get_object_or_404(Post, id=self.kwargs['pk'])
+        total_likes = stuff.total_likes()
+        context["total_likes"] = total_likes
+        return context   
 
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
@@ -74,6 +90,16 @@ class PostCreate(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        return super().form_valid(form)
+
+class AddCommentView(CreateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'add_comment.html'
+    success_url = '/posts/'
+
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
         return super().form_valid(form)
 
 class PostDelete(LoginRequiredMixin, DeleteView):
