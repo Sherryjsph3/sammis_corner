@@ -88,9 +88,9 @@ class PostCreate(LoginRequiredMixin, CreateView):
     template_name = 'new.html'
     success_url = '/posts/'
 
-    # def form_valid(self, form):
-    #     form.instance.user = self.request.user
-    #     return super().form_valid(form)
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class AddCommentView(CreateView):
     model = Comment
