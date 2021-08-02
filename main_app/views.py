@@ -67,8 +67,8 @@ class PostIndex(LoginRequiredMixin, ListView):
     template_name = 'index.html'
     context_object_name = 'posts'
 
-    def get_queryset(self):
-        return Post.objects.filter(user=self.request.user)
+    # def get_queryset(self):
+    #     return Post.objects.filter(user=self.request.user)
     
 class PostDetail(LoginRequiredMixin, DetailView):
     model = Post
@@ -88,9 +88,9 @@ class PostCreate(LoginRequiredMixin, CreateView):
     template_name = 'new.html'
     success_url = '/posts/'
 
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super().form_valid(form)
+    # def form_valid(self, form):
+    #     form.instance.user = self.request.user
+    #     return super().form_valid(form)
 
 class AddCommentView(CreateView):
     model = Comment
