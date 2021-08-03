@@ -27,11 +27,11 @@
     margin-left: 109px;
 }
 
-a {
+.base-anchor {
     text-decoration: none;
     color: white;
     font-family: Roboto;
-    font-size: 13px;
+    font-size: 13px; 
 }
 
 nav {
@@ -51,7 +51,7 @@ li {
 }
 
 .search {
-    margin-top: 8px;
+    margin-top: 10px;
     margin-right: 10px;
 }
 
@@ -83,17 +83,26 @@ li {
 }
 
 .nav-bottom {
-  align-items: center;
+margin-left: 310px;
+justify-content: space-around;
 }
 
-.fa-pinterestm,
+.fa-pinterest,
 .fa-instagram,
 .fa-tiktok,
 .fa-youtube {
     color: white;
-    padding: 5px;
+    padding: 3px;
+   font-size: 12px;
+    margin-right:8px;
 }
 
 .icons {
    text-align: right;
+}
+
+
+/* ========== detail.html ========== */
+.detail-anchor {
+    color: black;
 }

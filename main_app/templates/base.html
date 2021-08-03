@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 
    
-   
     <title>sammi's corner</title>
 </head>
 <body>
@@ -18,39 +17,39 @@
         <nav class="nav-bar">
             <ul>
                 <li>
-                    <a href="/">home</a>
+                    <a class="base-anchor" href="/">home</a>
                 </li>
 
                 <li>
-                    <a href="/about">about</a>
+                    <a class="base-anchor" href="/about">about</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li>
-                    <a href="/posts">blog</a>
+                    <a class="base-anchor" href="/posts">blog</a>
                 </li>
 
                 <li>
-                    <a href="/jewelry">jewelry</a>
+                    <a class="base-anchor" href="/jewelry">jewelry</a>
                 </li>
 
                 <li>
-                    <a href="/beauty">beauty</a>
+                    <a class="base-anchor" href="/beauty">beauty</a>
                 </li>
 
                 <li>
-                    <a href="/posts/new">new post</a>
+                    <a class="base-anchor" href="/posts/new">new post</a>
                 </li>
 
                 <li>    
-                    <a href="/accounts/logout">logout</a>
+                    <a class="base-anchor" href="/accounts/logout">logout</a>
                 </li>
                 {% else %}
                 <li>
-                    <a href="/accounts/login">login</a>
+                    <a class="base-anchor" href="/accounts/login">login</a>
                 </li>
 
                 <li>
-                    <a href="/accounts/register">signup</a>
+                    <a class="base-anchor" href="/accounts/register">signup</a>
                 </li>
                 {% endif %}
             </ul>
@@ -75,27 +74,27 @@
     <div class="div-bottom">
         <ul class="nav-bottom">
             <li>
-                <a href="/">home</a>
+                <a class="base-anchor" href="/">home</a>
             </li>
 
             <li>
-                <a href="/about">about</a>
+                <a class="base-anchor" href="/about">about</a>
             </li>
             {% if user.is_authenticated %}
             <li>
-                <a href="/posts">blog</a>
+                <a class="base-anchor" href="/posts">blog</a>
             </li>
 
             <li>
-                <a href="/jewelry">jewelry</a>
+                <a class="base-anchor" href="/jewelry">jewelry</a>
             </li>
 
             <li>
-                <a href="/beauty">beauty</a>
+                <a class="base-anchor" href="/beauty">beauty</a>
             </li>
 
             <li>
-                <a href="/posts/new">new post</a>
+                <a class="base-anchor" href="/posts/new">new post</a>
             </li>
             {% endif %}
         </ul>

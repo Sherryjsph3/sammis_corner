@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 
 urlpatterns = [
@@ -19,4 +19,3 @@ urlpatterns = [
     path('like/<int:pk>/', views.LikeView, name='like-post')
 ]
 
-urlpatterns += staticfiles_urlpatterns()
