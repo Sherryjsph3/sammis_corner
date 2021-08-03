@@ -1,13 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-            <h1>- blog -</h1>
             <hr>
+            <br/>
+            <h1 class="index-h1">- blog -</h1>
+            <div class="index-div">
             {% for post in posts %} 
             <a href='/posts/{{post.id}}'>
             
-            <img src='{{ post.image_one.url }}'>
+            <img class="index-img" src='{{ post.image_one.url }}'>
             </a>
             {% endfor %}
-            <button>more</button>
+            </div>
+            <br/><br/>
+
+            <button class="index-button">more</button>
+
 {% endblock %}
