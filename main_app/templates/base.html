@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 
    
    
     <title>sammi's corner</title>
 </head>
 <body>
-    <header>
+    <header class="base-header">
         <nav class="nav-bar">
             <ul>
                 <li>
@@ -53,16 +54,16 @@
                 </li>
                 {% endif %}
             </ul>
-            <form action="{% url 'search-posts' %}" method="POST">
+            <form class="search" action="{% url 'search-posts' %}" method="POST">
                 {% csrf_token %}
-                <input type="search" placeholder="search posts" name="searched"/>
-                <button type="submit"><i class="fas fa-search"></i></button>
+                <input class="search-inpt" type="search" placeholder="search posts" name="searched"/>
+                <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </nav>
     </header>
     <h1 class="base-logo">sammi's corner</h1>
-        <h4>fuelled by coffee +</h4>
-        <h4>a killer outfit</h4>
+        <h4 class="base-h4">fuelled by coffee +</h4>
+        <h4 class="base-h4-two">a killer outfit</h4>
         <main>
             {% block content %}
 
@@ -71,8 +72,8 @@
         <hr>
         
         <h4>- live in the now, as you are -</h4>   
-    <div>
-        <ul>
+    <div class="div-bottom">
+        <ul class="nav-bottom">
             <li>
                 <a href="/">home</a>
             </li>
@@ -98,11 +99,12 @@
             </li>
             {% endif %}
         </ul>
+        <div class="icons">
         <a href='https://www.pinterest.com/sammijefcoate/_saved/'><i class="fab fa-pinterest"></i></a>
         <a href='https://www.instagram.com/sammijefcoate/'><i class="fab fa-instagram"></i></a>
         <a href='https://www.tiktok.com/@sammi_jefcoate?lang=en'><i class="fab fa-tiktok"></i></a>
         <a href='https://www.youtube.com/c/SammiJefcoate/featured'></a><i class="fab fa-youtube"></i>
-        
+    </div>
     </div>
     <footer>
         <p>copyright &copy; all rights reserved - sammi's corner 2021</p>

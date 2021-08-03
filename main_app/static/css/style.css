@@ -1,18 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+ 
+}   
 
-
-a {
-    text-decoration: none;
-}
-
-body {
-    background-color: red;
+/* ========== base.html ========== */
+.base-header {
+    background-color: black;
+    height: 50px ;
 }
 
 .base-logo {
-    font-family: Arial, Helvetica, sans-serif;
-    color: red;
+    font-family: UnifrakturMaguntia;
+    font-size: 40px;
+    margin: 12px;
 }
 
-p {
-    font-family: didot;
+.base-h4, .base-h4-two {
+    font-family: Roboto;
+    font-size: 18px;
+    margin-left: 60px;
+}
+
+.base-h4-two {
+    margin-top: 8px;
+    margin-left: 109px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-family: Roboto;
+    font-size: 13px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul {
+    margin-left: 490px;
+    margin-top: 10px;  
+}
+
+li {
+    display: inline;
+    padding: 5px;
+}
+
+.search {
+    margin-top: 8px;
+    margin-right: 10px;
+}
+
+.search-inpt {
+    border: 1px solid white;
+    background-color: transparent;
+    border-radius: 12px;
+} 
+
+.search-inpt::placeholder{
+    color: white;
+    font-family: roboto;
+    font-size: 10px;
+    text-align: center;
+    padding: 2px;
+}
+
+.fa-search {
+    color: white;
+}
+
+.search-btn { 
+    background-color: transparent;
+    border: none;
+}
+
+.div-bottom {
+    background-color: black ;
+}
+
+.nav-bottom {
+  align-items: center;
+}
+
+.fa-pinterestm,
+.fa-instagram,
+.fa-tiktok,
+.fa-youtube {
+    color: white;
+    padding: 5px;
+}
+
+.icons {
+   text-align: right;
 }
