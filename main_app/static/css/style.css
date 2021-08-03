@@ -59,6 +59,9 @@ li {
     border: 1px solid white;
     background-color: transparent;
     border-radius: 12px;
+    color: white;
+    font-family: roboto;
+    font-size: 10px;
 } 
 
 .search-inpt::placeholder{
@@ -67,6 +70,12 @@ li {
     font-size: 10px;
     text-align: center;
     padding: 2px;
+}
+
+.search-inpt:focus {
+    outline: 1px solid transparent;
+    border: 1px solid white;
+    background-color: transparent;
 }
 
 .fa-search {
@@ -79,7 +88,8 @@ li {
 }
 
 .div-bottom {
-    background-color: black ;
+    background-color: black;
+    height: 50px;
 }
 
 .nav-bottom {
@@ -114,7 +124,20 @@ footer {
     text-align: center;
     padding: 5px;
     font-weight: bolder;
+    height: 50px;
 
+}
+/* ========== home.html ========== */
+.home-div {
+    max-width: 800px; 
+    height: 70vh;
+}
+
+.home-img{
+    width: 100%;
+    height: auto;
+    margin: -50px -200px 0px 170px;
+   
 }
 /* ========== detail.html ========== */
 .detail-anchor {
