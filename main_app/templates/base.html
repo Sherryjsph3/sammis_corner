@@ -5,20 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- local CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    
-    <title>sammi's Corner</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+   
+   
+    <title>sammi's corner</title>
 </head>
 <body>
     <header>
-        <h1>sammi's corner</h1>
-        <h4>fuelled by coffee +</h4>
-        <h4>a killer outfit</h4>
-    
-        <nav>
+        <nav class="nav-bar">
             <ul>
                 <li>
                     <a href="/">home</a>
@@ -64,6 +60,9 @@
             </form>
         </nav>
     </header>
+    <h1 class="base-logo">sammi's corner</h1>
+        <h4>fuelled by coffee +</h4>
+        <h4>a killer outfit</h4>
         <main>
             {% block content %}
 
@@ -99,10 +98,10 @@
             </li>
             {% endif %}
         </ul>
-        <i class="fab fa-pinterest"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-tiktok"></i>
-        <i class="fab fa-youtube"></i>
+        <a href='https://www.pinterest.com/sammijefcoate/_saved/'><i class="fab fa-pinterest"></i></a>
+        <a href='https://www.instagram.com/sammijefcoate/'><i class="fab fa-instagram"></i></a>
+        <a href='https://www.tiktok.com/@sammi_jefcoate?lang=en'><i class="fab fa-tiktok"></i></a>
+        <a href='https://www.youtube.com/c/SammiJefcoate/featured'></a><i class="fab fa-youtube"></i>
         
     </div>
     <footer>
