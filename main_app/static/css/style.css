@@ -83,8 +83,8 @@ li {
 }
 
 .nav-bottom {
-margin-left: 310px;
-justify-content: space-around;
+    margin-left: 350px;
+    justify-content: space-around;
 }
 
 .fa-pinterest,
@@ -101,7 +101,21 @@ justify-content: space-around;
    text-align: right;
 }
 
+.base-h4-three {
+    font-family: Roboto;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+}
 
+footer {
+    font-family: Roboto;
+    font-size: 10px;
+    text-align: center;
+    padding: 5px;
+    font-weight: bolder;
+
+}
 /* ========== detail.html ========== */
 .detail-anchor {
     color: black;
