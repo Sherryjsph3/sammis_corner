@@ -540,7 +540,7 @@ a {
     color: white;
     border-radius: 11px;
     font-size: 11px; 
-    margin-top: 15px; 
+  margin: 20px
 }
 
  .edit-input:hover {
