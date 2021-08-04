@@ -339,3 +339,70 @@ a {
     font-size: 13px;
 }
 /* ========== add_comment.html ========== */
+.comment-h1 {
+    font-family: UnifrakturMaguntia;
+    text-align: center;
+}
+
+.comment-form {
+    margin-left: 100px;
+    font-family: Roboto;
+    font-weight: bolder;
+    font-size: 15px;
+    margin-top: 100px;
+}
+
+.form-control {
+    margin: 20px;
+    font-family: Roboto;
+    font-weight: bolder;
+    font-size: 18px;
+    border-radius: 12px;
+    border: 1px solid black;
+}
+
+.form-control-two {
+    font-family: Roboto;
+    font-weight: bolder;
+    font-size: 18px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.comment-input {
+    margin-top: 50px;
+    font-family: Roboto;
+    padding: 8px;
+    border: none;;
+    background-color:black;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;  
+}
+
+.comment-input:hover {
+    font-family: Roboto;
+    padding: 10px;
+    border: 1px solid black;
+    color: black;
+    background-color: transparent;
+    border-radius: 10px;
+    font-size: 15px
+}
+
+.form-control:focus, .form-control-two:focus {
+    outline: 1px solid transparent;
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+.comment-img {
+    width: 25%;
+    float: right;
+    margin-top: 90px;
+    margin-right: 90px;
+    transform: rotate(9deg);
+    border: 5px solid rgba(232, 232, 232);
+    box-shadow: 2px 2px 2px rgba(77, 82, 84, 0.7);
+}
+

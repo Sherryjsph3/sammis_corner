@@ -38,12 +38,12 @@
             <a href="{% url 'add-comment' post.pk%}">add comment</a>
             <br/><br/>
                 {% for comment in post.comments.all %}
-                    <strong>
+                    <strong class="detail-strong">
                         {{ comment.name}} - 
                         {{ comment.date_added }}
                     </strong> 
                     <br/> 
-                    {{ comment.body }}
+                    <p class="detail-p-two">{{ comment.body }}</p>
                     <br/><br/>  
                 {% endfor %} 
             {% endif %}

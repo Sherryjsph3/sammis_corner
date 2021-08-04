@@ -1,18 +1,21 @@
 {% extends 'base.html'%}
+{% load static %}
 
 {% block content %}
 
-<h1>add a comment</h1>
-
 <hr>
-
-<form action='' method='POST'>
+<br/>
+<h1 class="comment-h1">add a comment</h1>
+<br/><br/><br/>
+<img class="comment-img" src="{% static 'imgs/scarf.jpeg' %}"/>
+<form class="comment-form" action='' method='POST'>
 
     {% csrf_token %}
     {{ form.as_p }}
     
-    <input type='submit' value='add comment'/>
+    <input class="comment-input" type='submit' value='add comment'/>
 
 </form>
 
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 {% endblock %}
