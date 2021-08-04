@@ -1,15 +1,23 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-                <h1>are you sure you want to delete {{ object.title }}</h1>
 
-                <form action='' method='POST'>
+                <hr>
+                <br/>
+                <div class="delete-div">
+                <h1 class="delete-h1">are you sure you want to delete {{ object.title }}</h1>
+
+                <img class="delete-img" src="{% static 'imgs/2019-07-112B01.17.392B2.jpg' %}"/>
+                
+                <form class="delete-form" action='' method='POST'>
 
                     {% csrf_token %}
 
-                    <input type='submit' value='yes - delete'>
+                    <input class="delete-input" type='submit' value='yes - delete'>
 
-                    <a href='/posts/{{ object.id }}'>cancel</a>
+                    <a class="delete-a" href='/posts/{{ object.id }}'>...cancel</a>
 
                 </form>
+            </div>
 {% endblock %}
