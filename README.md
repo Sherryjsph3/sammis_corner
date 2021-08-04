@@ -30,12 +30,13 @@ A fashion blog which highlights individuality and style. A site to showcase simp
 ![Sammi's Corner wireframe](main_app/static/imgs/wireframe.png)
 
 ### Working App
-![Sammi's Corner home page]()
-![Sammi's Corner about page]()
-![Sammi's Corner index page]()
-![Sammi's Corner show page]()
-![Sammi's Corner beauty page]()
-![Sammi's Corner jewelry page]()  
+![Sammi's Corner home page](main_app/static/imgs/home.png)
+![Sammi's Corner about page](main_app/static/imgs/about.png)
+![Sammi's Corner index page](main_app/static/imgs/blog.png)
+![Sammi's Corner show page](main_app/static/imgs/detail.png)
+![Sammi's Corner beauty page](main_app/static/imgs/beauty.png)
+![Sammi's Corner jewelry page](main_app/static/imgs/jewlelry.png)
+![Sammi's Corner new page](main_app/static/imgs/new.png)   
 
 ## `Future Enhancements`
 Some future enhancemanets for sammi's corner would be to :
@@ -44,6 +45,7 @@ Some future enhancemanets for sammi's corner would be to :
 * reply to comments
 * create a profile page for users, that can also be updated 
 * add username and image to the nav bar when user is logged in
+* create a cloud storage for my images because heroku doesn't save the media files
 
 ## `Getting Started`
 

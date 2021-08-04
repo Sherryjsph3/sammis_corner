@@ -34,7 +34,7 @@ class UpdateForm(forms.ModelForm):
             'title': forms.TextInput(attrs={'class': 'form-update-two'}),
             'image_one': forms. ClearableFileInput(attrs={'class': 'form-update'}),
             'image_two': forms. ClearableFileInput(attrs={'class': 'form-update'}),
-            'blurb': forms.Textarea(attrs={'class': 'form-update-two'}),
+            'blurb': forms.Textarea(attrs={'class': 'form-update-three'}),
 
         } 
                
