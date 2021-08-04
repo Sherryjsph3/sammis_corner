@@ -1,6 +1,6 @@
 # sammi's corner
 
-A fashion blog which highlights individuality and style. A site to showcase simple outfits with snappy descriptions. As you browse sammi's corner you'll also be directed to pages where you can shop some of her favs things via direct links. Full CRUD capabilities can be performed and users who are authorized can like and comment on each blog post.
+A fashion blog which highlights individuality and style. A site to showcase simple outfits with snappy descriptions. As you browse sammi's corner you'll also be directed to pages where you can shop some of her favorite things via direct links. Full CRUD capabilities can be performed and users who are authorized can like and comment on each blog post.
 
 ## `Technologies Used`
 
@@ -22,7 +22,7 @@ A fashion blog which highlights individuality and style. A site to showcase simp
 * As a user, I want to be able to get to a snippet of the life and style of Sammi
 * As a user, I want to be able to like and comment on blog posts
 * As a user, I want to be able to search the site to find specific posts
-* As a user, I want to be able to search the site to find specific posts
+* As a user, I want to be able to edit and update my created posts
  
 ## `Screenshots`
 
@@ -45,7 +45,7 @@ Some future enhancements for sammi's corner would be to :
 * reply to comments
 * create a profile page for users, that can also be updated 
 * add username and image to the nav bar when user is logged in
-* create a cloud storage for my images because heroku doesn't save the media files
+* implement a cloud storage service to store my images permanantly because heroku doesn't save the media files
 
 ## `Getting Started`
 
