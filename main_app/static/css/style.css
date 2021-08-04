@@ -534,7 +534,7 @@ a {
 
 .edit-input {
     font-family: Roboto;
-    padding: 10px;
+    padding: 8px;
     border: none;;
     background-color: rgba(77, 82, 84);
     color: white;
@@ -697,6 +697,7 @@ a {
 }
 
 .delete-input {
+
     font-family: Roboto;
     padding: 8px;
     border: none;;

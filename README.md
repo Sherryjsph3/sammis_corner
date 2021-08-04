@@ -39,7 +39,7 @@ A fashion blog which highlights individuality and style. A site to showcase simp
 ![Sammi's Corner new page](main_app/static/imgs/new.png)   
 
 ## `Future Enhancements`
-Some future enhancemanets for sammi's corner would be to :
+Some future enhancements for sammi's corner would be to :
 * add restrictions to who can make, edit and delete blog posts 
 * add a blog category nav bar
 * reply to comments
