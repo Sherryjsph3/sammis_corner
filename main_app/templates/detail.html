@@ -1,33 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-            <h6>{{ post.created_on }}</h6>
-
-            <h1>{{ post.title }}</h1>
+           
             <hr>
-        
-            <img src='{{ post.image_one.url }}'>
-
-            <img src='{{ post.image_two.url }}'>
-
-            <p>{{ post.blurb|safe }}</p>
-
-            <a class="detail-anchor" href='/posts/{{post.id}}/delete'>delete</a>
+            <br>
             <br/>
-            <a class="detail-anchor" href='/posts/{{post.id}}/update'>update</a>
+            <h6 class="detail-h6">{{ post.created_on }}</h6>
+
+            <h1 class="detail-h1">{{ post.title }}</h1>
+
+            <img class="detail-img" src='{{ post.image_one.url }}'>
+
+            <img class="detail-img-two"src='{{ post.image_two.url }}'>
+
+         
+            <p class="detail-p">{{ post.blurb|striptags|safe }}</p>
+            <br/><br/>
+
+            <a href='/posts/{{post.id}}/delete'><button class="detail-button" >delete</button></a>
+            
+            <a href='/posts/{{post.id}}/update'><button class="detail-button-two">update</button></a>
             
             <br/><br/>
             
-            <form action="{% url 'like-post' post.pk %}" method="POST">
+            <form class="detail-form" action="{% url 'like-post' post.pk %}" method="POST">
                 {% csrf_token %}
-                <button type='submit' name='post_id' value='{{ post.id }}'>like</button> - {{ total_likes }} likes
+                <button class="detail-like" type='submit' name='post_id' value='{{ post.id }}'>like</button> - {{ total_likes }} likes
             </form>
 
             <br/>  
-            <h2>comments...</h2>
+            <h2 class="detail-comment">comments...</h2>
             <br>
+            <div class="detail-div">
             {% if not post.comments.all %}
-                no comments yet...<a href="{% url 'add-comment' post.pk%}">add comment</a>
+                no comments yet--<a href="{% url 'add-comment' post.pk%}">add comment</a>
             {% else %}
             <a href="{% url 'add-comment' post.pk%}">add comment</a>
             <br/><br/>
@@ -41,5 +47,6 @@
                     <br/><br/>  
                 {% endfor %} 
             {% endif %}
+            </div>
             
 {% endblock %}
