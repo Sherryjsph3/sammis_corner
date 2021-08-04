@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
-<form action='' method='POST'>
+<hr>
+<br/>
+<h1 class="login">login</h1>
+<div class="login-div">
+<form class="login-form" action='' method='POST'>
     <legend>
-        <h1>login</h1>
         {% csrf_token %}
         {{ form.as_p }}
-        <input type='submit' value='login'>
+        <input class="login-input" type='submit' value='login'>
     </legend>
 </form>
+</div>
+
+<div class="home-div">
+                
+    <img class="home-img" src="{% static 'imgs/IMG_8711.PNG' %}"/>
+    </div>
+
 
 {% endblock %}

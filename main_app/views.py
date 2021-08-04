@@ -8,7 +8,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse
-from.forms import CommentForm, PostForm
+from.forms import CommentForm, PostForm, UpdateForm
 from .models import Comment, Post
 
 
@@ -110,6 +110,7 @@ class PostDelete(LoginRequiredMixin, DeleteView):
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
-    fields = ['title', 'image_one', 'image_two', 'blurb', 'status']
-    template_name = 'new.html'
+    # fields = ['title', 'image_one', 'image_two', 'blurb', 'status']
+    form_class = UpdateForm
+    template_name = 'edit.html'
     success_url = '/posts/'

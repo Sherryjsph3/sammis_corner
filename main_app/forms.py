@@ -24,4 +24,17 @@ class PostForm(forms.ModelForm):
             'blurb': forms.Textarea(attrs={'class': 'form-control-two'}),
 
         } 
+
+class UpdateForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ('title', 'image_one', 'image_two', 'blurb', )
+
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-update-two'}),
+            'image_one': forms. ClearableFileInput(attrs={'class': 'form-update'}),
+            'image_two': forms. ClearableFileInput(attrs={'class': 'form-update'}),
+            'blurb': forms.Textarea(attrs={'class': 'form-update-two'}),
+
+        } 
                

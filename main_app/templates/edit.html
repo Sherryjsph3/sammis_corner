@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block content %}
+
+<hr>
+<br/>
+
+<h1 class="edit-h1">edit: {{ object.title }}</h1>
+
+<br/><br/><br/>
+
+
+<form class="edit-form" action='' method='POST' enctype='multipart/form-data'>
+
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form }}
+    
+    <input class="edit-input" type='submit' value='edit post'/>
+
+</form>
+
+
+{% endblock %}

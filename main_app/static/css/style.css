@@ -447,7 +447,7 @@ a {
     border: 1px solid black;
 }
 
-.form:focus {
+.form-post-two:focus {
     outline: 1px solid black;
     border: 1px solid black;
     background-color: transparent;
@@ -493,5 +493,196 @@ a {
     margin-top: 20px;
     border: 5px solid rgba(232, 232, 232);
     box-shadow: 2px 2px 2px rgba(77, 82, 84, 0.7);
+}
+/* ========== edit.html ========== */
+.edit-form {
+    margin-left: 100px;
+    font-family: Roboto;
+    font-weight: bolder;
+    font-size: 11px;
+    margin-top: 50px;
+    max-width: 900px;
+}
+
+.form-update-two {
+    margin: 20px;
+    font-family: Roboto;
+    font-weight: bolder;
+    font-size: 11px;
+    border: 1px solid black;
+}
+
+.form-update[type=file]::file-selector-button {
+    color: white;
+    font-family: Roboto;
+    border: none;
+    background-color: rgba(77, 82, 84, 0.8);
+    border-radius: 3px;
+    font-size: 11px;
+}
+.form-update {
+    font-family: Roboto;
+    font-weight: bolder;
+    font-size: 11px;
+    padding: 8px;
+}
+
+.edit-h1 {
+    font-family: UnifrakturMaguntia;
+    text-align: center;
+}
+
+.edit-input {
+    font-family: Roboto;
+    padding: 10px;
+    border: none;;
+    background-color: rgba(77, 82, 84);
+    color: white;
+    border-radius: 11px;
+    font-size: 11px; 
+    margin-top: 15px; 
+}
+
+ .edit-input:hover {
+    font-family: Roboto;
+    padding: 8px;
+    border: 1px solid black;
+    color: black;
+    background-color: transparent;
+    border-radius: 11px;
+    font-size: 11px
+}
+/* ========== jewelry.html ========== */
+.jewelry-img {
+    width: 26%;
+    margin-left: 80px;
+    transform: rotate(-20deg);
+    border: 5px solid rgba(232, 232, 232);
+    box-shadow: 2px 2px 2px rgba(77, 82, 84, 0.7);
+}
+.jewelry-h1 {
+    font-family: UnifrakturMaguntia;
+    text-align: center;
+}
+
+.jewels {
+    width: 25%;
+    margin: 5px; 
+    border: 5px solid rgba(232, 232, 232);
+}
+
+.jewels:hover {
+    box-shadow: 2px 2px 2px 2px rgba(77, 82, 84, 0.7);  
+}
+
+.jewelry-area {
+    max-width: 800px;
+    margin-top: -80px;
+    margin-left: 360px;
+}
+
+/* ========== beauty.html ========== */
+.beauty {
+    width: 25%;
+    margin-left: 80px;
+    transform: rotate(-20deg);
+    border: 5px solid rgba(232, 232, 232);
+    box-shadow: 2px 2px 2px rgba(77, 82, 84, 0.7);
+}
+
+.beauty-h1 {
+    font-family: UnifrakturMaguntia;
+    text-align: center;
+}
+
+.beauty-img {
+    width: 25%;
+    margin: 5px; 
+    border: 5px solid rgba(232, 232, 232);
+}
+
+.beauty-img:hover {
+    box-shadow: 2px 2px 2px 2px rgba(77, 82, 84, 0.7); 
+}
+
+.beauty-area {
+    max-width: 800px;
+    margin-top: -200px;
+    margin-left: 360px;
+}
+/* ========== login.html ========== */
+
+.login-div {
+    margin-left: 80px;
+    color: black;
+}
+.login {
+    font-family: UnifrakturMaguntia;
+    text-align: center;
+}
+
+.login-form, .login-p {
+    font-family: Roboto; 
+}
+
+.login-p {
+    font-family: Roboto;
+    
+}
+
+.login-input {
+    font-family: Roboto;
+    padding: 8px;
+    border: none;;
+    background-color: black;
+    color: white;
+    border-radius: 11px;
+    font-size: 15px; 
+    margin-top: 15px; 
+}
+
+.login-input:hover {
+    font-family: Roboto;
+    padding: 8px;
+    border: 1px solid black;
+    color: black;
+    background-color: transparent;
+    border-radius: 11px;
+    font-size: 15px
+}
+
+/* ========== register.html ========== */
+
+.signup-h1 {
+    font-family: UnifrakturMaguntia;
+    text-align: center;
+}
+
+.signup-form {
+    font-family: Roboto; 
+    font-size: 13px;
+    margin-left: 10px;
+    max-width: 800;
+}
+
+.signup-input {
+    font-family: Roboto;
+    padding: 8px;
+    border: none;;
+    background-color: black;
+    color: white;
+    border-radius: 11px;
+    font-size: 15px; 
+    margin-top: 15px; 
+}
+
+.signup-input:hover {
+    font-family: Roboto;
+    padding: 8px;
+    border: 1px solid black;
+    color: black;
+    background-color: transparent;
+    border-radius: 11px;
+    font-size: 15px
 }
 

@@ -7,17 +7,10 @@
 <hr>
 <br/>
 
-
-{% if object %}
-
-<h1>edit: {{ object.title }}</h1>
-
-{% else %}
-
 <h1 class="new-h1">create a new post</h1>
 <br/><br/><br/>
 <img class="new-img" src="{% static 'imgs/9732717D-C7C8-4C01-876E-4F863BD3DCB0-1024x759.jpeg' %}"/>
-{% endif %}
+
 
 <form class="new-form" action='' method='POST' enctype='multipart/form-data'>
 
