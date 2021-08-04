@@ -8,7 +8,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse
-from.forms import CommentForm
+from.forms import CommentForm, PostForm
 from .models import Comment, Post
 
 
@@ -84,7 +84,8 @@ class PostDetail(LoginRequiredMixin, DetailView):
 
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'image_one', 'image_two', 'blurb', 'status']
+    # fields = ['title', 'image_one', 'image_two', 'blurb', 'status']
+    form_class = PostForm
     template_name = 'new.html'
     success_url = '/posts/'
 

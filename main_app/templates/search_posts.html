@@ -3,17 +3,20 @@
 {% block content %}
 
     {% if searched %}
-   
-        <h1>you searched for {{ searched }}</h1>
+        <hr>
         <br/>
+        <h1 class="search-h1">you searched for {{ searched }}</h1>
+        <br/>
+        <div class="search-div">
         {% for post in posts%}
-            <a href='/posts/{{post.id}}'>{{ post }}</a>
+            <a class="search-a" href='/posts/{{post.id}}'><p>{{ post }}</p></a>
             <br/>
         {% endfor %}
  
     {% else %}
-        <h1>you must search for a post...</h1>
+        <h1 class="search-h1">you must search for a post...</h1>
     {% endif %}
+        </div>
 
                
 

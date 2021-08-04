@@ -1,6 +1,12 @@
 {% extends 'base.html'%}
+{% load static %}
+
 
 {% block content %}
+
+<hr>
+<br/>
+
 
 {% if object %}
 
@@ -8,19 +14,20 @@
 
 {% else %}
 
-<h1>create a new post</h1>
-<hr>
-
+<h1 class="new-h1">create a new post</h1>
+<br/><br/><br/>
+<img class="new-img" src="{% static 'imgs/9732717D-C7C8-4C01-876E-4F863BD3DCB0-1024x759.jpeg' %}"/>
 {% endif %}
 
-<form action='' method='POST' enctype='multipart/form-data'>
+<form class="new-form" action='' method='POST' enctype='multipart/form-data'>
 
     {% csrf_token %}
     {{ form.media }}
     {{ form }}
     
-    <input type='submit' value='post'/>
+    <input class="new-input" type='submit' value='create a post'/>
 
 </form>
+
 
 {% endblock %}
