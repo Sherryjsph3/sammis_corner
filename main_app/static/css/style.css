@@ -686,6 +686,9 @@ a {
     font-size: 15px
 }
 
+.register-div {
+    font-family: Roboto;
+}
 /* ========== delete.html ========== */
 .delete-div {
     height: 65vh;
