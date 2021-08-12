@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
-    'boto3'
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -149,5 +149,12 @@ import django_heroku
 
 django_heroku.settings(locals())
 
+aws_access_key_id = os.environ.get('aws_access_key_id')
+aws_secret_access_key = os.environ.get('aws_secret_access_key')
+aws_storage_bucket_name = os.environ.get('aws_storage_bucket_name')
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
 
 
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

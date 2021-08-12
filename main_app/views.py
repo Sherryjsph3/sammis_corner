@@ -11,11 +11,11 @@ from django.urls import reverse
 from.forms import CommentForm, PostForm, UpdateForm
 from .models import Comment, Post
 
-import boto3
-import uuid
+# import boto3
+# import uuid
 
-S3_BASE_URL= 'https://s3.us-east-1.amazonaws.com/'
-BUCKET= 'sammis-corner'
+# S3_BASE_URL= 'https://s3.us-east-1.amazonaws.com/'
+# BUCKET= 'sammis-corner'
 
 # Create your views here.
 
@@ -98,20 +98,20 @@ class PostCreate(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-    def add_photo(reques, pk):
-        photo_file = request.FILES.get('photo-file', None)
-        if photo_file:
-            s3 = boto3.client('s3')
-            key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
-            try:
-                s3.upload_fileobj(photo_file, BUCKET, key)
-                url = f"{S3_BASE_URL}{BUCKET}/{key}"
-                photo = Post(url=url, args=[str(pk)])
-                photo.save()
-            except Exception as error:
-                print('An error occurred uploading file to S3')
-                print(error)
-        return redirect('post-detail',args=[str(pk)])
+    # def add_photo(reques, pk):
+    #     photo_file = request.FILES.get('photo-file', None)
+    #     if photo_file:
+    #         s3 = boto3.client('s3')
+    #         key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+    #         try:
+    #             s3.upload_fileobj(photo_file, BUCKET, key)
+    #             url = f"{S3_BASE_URL}{BUCKET}/{key}"
+    #             photo = Post(url=url, args=[str(pk)])
+    #             photo.save()
+    #         except Exception as error:
+    #             print('An error occurred uploading file to S3')
+    #             print(error)
+    #     return redirect('post-detail',args=[str(pk)])
 
 class AddCommentView(CreateView):
     model = Comment
