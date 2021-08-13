@@ -11,6 +11,7 @@ urlpatterns = [
     path('posts/', views.PostIndex.as_view()),
     path('posts/<int:pk>/', views.PostDetail.as_view(), name='post-detail'),
     path('posts/new/', views.PostCreate.as_view()),
+    path('posts/<int:post_id>/add_photo/', views.add_photo, name='add_photo'),
     path('posts/<int:pk>/delete/', views.PostDelete.as_view()),
     path('posts/<int:pk>/update/', views.PostUpdate.as_view()),
     path('accounts/register/', views.register),

@@ -9,13 +9,14 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse
 from.forms import CommentForm, PostForm, UpdateForm
-from .models import Comment, Post
+from .models import Comment, Post, Photo
 
-# import boto3
-# import uuid
+import boto3
+import uuid
 
-# S3_BASE_URL= 'https://s3.us-east-1.amazonaws.com/'
-# BUCKET= 'sammis-corner'
+S3_BASE_URL= 'https://s3-us-east-2.amazonaws.com/'
+BUCKET= 'sammis-corner-new'
+
 
 # Create your views here.
 
@@ -66,6 +67,21 @@ def LikeView(request, pk):
     return HttpResponseRedirect(reverse('post-detail', args=[str(pk)]))
 
 
+def add_photo(request, post_id):
+    photo_file = request.FILES.get('photo-file', None)
+    if photo_file:
+        s3 = boto3.client('s3')
+        key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+        try:
+            s3.upload_fileobj(photo_file, BUCKET, key)
+            url = f"{S3_BASE_URL}{BUCKET}/{key}"
+            photo = Photo(url=url, post_id=post_id)
+            photo.save()
+        except Exception as error:
+            print('An error occurred uploading file to S3')
+            print(error)
+    return redirect('post-detail', post_id=post_id)
+
 #Class base views
 class PostIndex(LoginRequiredMixin, ListView):
     model = Post
@@ -74,6 +90,7 @@ class PostIndex(LoginRequiredMixin, ListView):
 
     # def get_queryset(self):
     #     return Post.objects.filter(user=self.request.user)
+
     
 class PostDetail(LoginRequiredMixin, DetailView):
     model = Post
@@ -97,21 +114,6 @@ class PostCreate(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
-
-    # def add_photo(reques, pk):
-    #     photo_file = request.FILES.get('photo-file', None)
-    #     if photo_file:
-    #         s3 = boto3.client('s3')
-    #         key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
-    #         try:
-    #             s3.upload_fileobj(photo_file, BUCKET, key)
-    #             url = f"{S3_BASE_URL}{BUCKET}/{key}"
-    #             photo = Post(url=url, args=[str(pk)])
-    #             photo.save()
-    #         except Exception as error:
-    #             print('An error occurred uploading file to S3')
-    #             print(error)
-    #     return redirect('post-detail',args=[str(pk)])
 
 class AddCommentView(CreateView):
     model = Comment

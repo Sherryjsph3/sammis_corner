@@ -15,12 +15,12 @@ class CommentForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'image_one', 'image_two', 'blurb', )
+        fields = ('title', 'blurb', )
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-post-two'}),
-            'image_one': forms. ClearableFileInput(attrs={'class': 'form-post'}),
-            'image_two': forms. ClearableFileInput(attrs={'class': 'form-post'}),
+            # 'image_one': forms. ClearableFileInput(attrs={'class': 'form-post'}),
+            # 'image_two': forms. ClearableFileInput(attrs={'class': 'form-post'}),
             'blurb': forms.Textarea(attrs={'class': 'form-control-two'}),
 
         } 
@@ -28,12 +28,12 @@ class PostForm(forms.ModelForm):
 class UpdateForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'image_one', 'image_two', 'blurb', )
+        fields = ('title', 'blurb', )
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-update-two'}),
-            'image_one': forms. ClearableFileInput(attrs={'class': 'form-update'}),
-            'image_two': forms. ClearableFileInput(attrs={'class': 'form-update'}),
+            # 'image_one': forms. ClearableFileInput(attrs={'class': 'form-update'}),
+            # 'image_two': forms. ClearableFileInput(attrs={'class': 'form-update'}),
             'blurb': forms.Textarea(attrs={'class': 'form-update-three'}),
 
         } 

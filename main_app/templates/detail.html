@@ -9,9 +9,12 @@
 
             <h1 class="detail-h1">{{ post.title }}</h1>
 
-            <img class="detail-img" src='{{ post.image_one.url }}'>
+            {% for photo in post.photo_set.all %}
+            <img class="detail-img" src='{{ photo.url }}'>
+            {% empty %}
 
-            <img class="detail-img-two"src='{{ post.image_two.url }}'>
+            {% endfor %}
+            <!-- <img class="detail-img-two"src='{{ post.image_two.url }}'> -->
 
          
             <p class="detail-p">{{ post.blurb|striptags|safe }}</p>

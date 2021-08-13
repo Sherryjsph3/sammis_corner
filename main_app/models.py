@@ -12,8 +12,6 @@ STATUS = (
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    image_one  = models.ImageField(upload_to='images/', height_field=None, width_field=None, max_length=100)
-    image_two = models.ImageField(upload_to='images/', height_field=None, width_field=None, max_length=100)
     blurb = RichTextField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
@@ -29,6 +27,14 @@ class Post(models.Model):
     def __str__(self):
         return self.title
     
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Photo for post_id: {self.post_id} @{self.url}"
+
+
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
