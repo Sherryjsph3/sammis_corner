@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import widgets
-from .models import Comment, Post
+from .models import Comment, Post, Photo
 
 class CommentForm(forms.ModelForm):
     class Meta:
@@ -37,4 +37,14 @@ class UpdateForm(forms.ModelForm):
             'blurb': forms.Textarea(attrs={'class': 'form-update-three'}),
 
         } 
-               
+
+class PhotoForm(forms.ModelForm):
+    class Meta:
+        model = Photo
+        fields = ['url']
+
+        widgets = {
+            'url': forms.TextInput(attrs={'class': 'form-upload'})
+        }
+            
+              

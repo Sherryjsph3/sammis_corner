@@ -10,9 +10,9 @@
             <h1 class="detail-h1">{{ post.title }}</h1>
 
             {% for photo in post.photo_set.all %}
-            <img class="detail-img" src='{{ photo.url }}'>
+            <img class="detail-img" src='{{ photo.url }}' alt="{{ post.title }}">
             {% empty %}
-
+            <div class="card-panel">No photos</div>
             {% endfor %}
             <!-- <img class="detail-img-two"src='{{ post.image_two.url }}'> -->
 

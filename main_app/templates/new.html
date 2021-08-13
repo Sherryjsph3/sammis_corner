@@ -12,13 +12,12 @@
 <img class="new-img" src="{% static 'imgs/9732717D-C7C8-4C01-876E-4F863BD3DCB0-1024x759.jpeg' %}"/>
 
 
-<form class="new-form" action="" method='POST' >
+<form class="new-form" action="" method='POST'>
 
     {% csrf_token %}
-    {{ form.media }}
+    <!-- {{ form.media }} -->
     {{ form }}
-    
-    
+    <input class="new-input" type='submit' value='create a post'/>
 
 </form>
 
@@ -26,6 +25,7 @@
 
     {% csrf_token %}
     {{ form.media }}
+    {{ form }}
    
     <input class="new-input" type='file' name='photo-file' />
     <br/>
