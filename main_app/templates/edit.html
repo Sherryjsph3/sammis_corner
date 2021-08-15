@@ -12,20 +12,13 @@
 <br/><br/><br/>
 
 
-<form class="edit-form" action="" method='POST' >
 
-    {% csrf_token %}
-   
-    {{ form }}
-    
-    
 
-</form>
-<form class="new-form" action="{% url 'add_photo' post.id %}" method='POST' enctype='multipart/form-data'>
+<form class="edit-form" action="" method='POST' enctype='multipart/form-data'>
 
     {% csrf_token %}
     {{ form.media }}
-    
+    {{ form }}
    
     <input class="new-input" type='file' name='photo-file' />
     <input class="edit-input" type='submit' value='edit post'/>

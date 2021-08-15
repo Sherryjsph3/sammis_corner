@@ -5,11 +5,11 @@
             <br/>
             <h1 class="index-h1">- blog -</h1>
             <div class="index-div">
+
             {% for post in posts %} 
-            <a href='/posts/{{post.id}}'>
-            
-            <img class="index-img" src='{{ post.url }}'>
-            </a>
+            <a href='/posts/{{post.id}}'><img class="index-img" src='{{ photo.url }}' alt="{{ post.title }}"/></a>
+
+
             {% endfor %}
             </div>
             <br/><br/>

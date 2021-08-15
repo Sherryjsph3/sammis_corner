@@ -67,20 +67,7 @@ def LikeView(request, pk):
     return HttpResponseRedirect(reverse('post-detail', args=[str(pk)]))
 
 
-def add_photo(request, post_id):
-    photo_file = request.FILES.get('photo-file', None)
-    if photo_file:
-        s3 = boto3.client('s3')
-        key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
-        try:
-            s3.upload_fileobj(photo_file, BUCKET, key)
-            url = f"{S3_BASE_URL}{BUCKET}/{key}"
-            photo = Photo(url=url, post_id=post_id)
-            photo.save()
-        except Exception as error:
-            print('An error occurred uploading file to S3')
-            print(error)
-    return redirect('post-detail', post_id=post_id)
+
 
 #Class base views
 class PostIndex(LoginRequiredMixin, ListView):
@@ -113,8 +100,25 @@ class PostCreate(LoginRequiredMixin, CreateView):
     success_url = '/posts/'
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        new_post = form.save(commit=False)
+        new_post.user = self.request.user
+        new_post.save()
+        photo_file = self.request.FILES.get('photo-file', None)
+        print(form.instance.__dict__)
+        if photo_file:
+            s3 = boto3.client('s3')
+            key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+            try:
+                s3.upload_fileobj(photo_file, BUCKET, key)
+                url = f"{S3_BASE_URL}{BUCKET}/{key}"
+                photo = Photo(url=url, post_id=new_post.id)
+                photo.save()
+            except Exception as error:
+                print('An error occurred uploading file to S3')
+                print(error)
         return super().form_valid(form)
+
+
 
 class AddCommentView(CreateView):
     model = Comment
@@ -133,7 +137,6 @@ class PostDelete(LoginRequiredMixin, DeleteView):
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
-    # fields = ['title', 'image_one', 'image_two', 'blurb', 'status']
     form_class = UpdateForm
     template_name = 'edit.html'
     success_url = '/posts/'
