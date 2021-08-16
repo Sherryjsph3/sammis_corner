@@ -8,17 +8,26 @@
             <h6 class="detail-h6">{{ post.created_on }}</h6>
 
             <h1 class="detail-h1">{{ post.title }}</h1>
+            <br/><br/><br/><br/>
 
+            <section>
+            <div class="content">
+                <div class="left">
             {% for photo in post.photo_set.all %}
             <img class="detail-img" src='{{ photo.url }}' alt="{{ post.title }}">
             {% empty %}
             <div class="card-panel">No photos</div>
             {% endfor %}
             <!-- <img class="detail-img-two"src='{{ post.image_two.url }}'> -->
+        </div> 
+  
+            <div class="right">
 
-         
             <p class="detail-p">{{ post.blurb|striptags|safe }}</p>
-            <br/><br/>
+            </div>    
+        </div> 
+    </section>
+            <br/><br/><br/>
 
             <a href='/posts/{{post.id}}/delete'><button class="detail-button" >delete</button></a>
             

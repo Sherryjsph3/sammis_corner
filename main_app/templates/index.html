@@ -1,24 +1,21 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content %}
             <hr>
             <br/>
             <h1 class="index-h1">- blog -</h1>
+            <img class="idx-img" src="{% static 'imgs/2998D6F0-3C7F-4BC3-80C6-64CB8D7BF7FD-scaled.jpeg' %}"/>
             <div class="index-div">
-
           {% for post in posts %} 
-            <a href='/posts/{{post.id}}'>
+            <a class='index-a' href='/posts/{{post.id}}'>
                 <div class="index-img">{{post.title}}</div>
-
+                </a>
 
             {% endfor %} 
-
-            
-
             </div>
 
-            
+            <img class="idx-imgtwo" src="{% static 'imgs/KUJICAM_2020-08-12-14-55-41_developed-1-819x1024.jpeg' %}"/>
             <br/><br/>
 
             <button class="index-button">more</button>
