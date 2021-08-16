@@ -44,9 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
-    'boto3',
-    
-    
 ]
 
 MIDDLEWARE = [
