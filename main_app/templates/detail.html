@@ -13,11 +13,11 @@
             <section>
             <div class="content">
                 <div class="left">
-            {% for photo in post.photo_set.all %}
+            <!-- {% for photo in post.photo_set.all %} -->
             <img class="detail-img" src='{{ photo.url }}' alt="{{ post.title }}">
-            {% empty %}
+            <!-- {% empty %} -->
             <div class="card-panel">No photos</div>
-            {% endfor %}
+            <!-- {% endfor %} -->
             
         </div> 
   
