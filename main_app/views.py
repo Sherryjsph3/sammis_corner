@@ -119,7 +119,6 @@ class PostCreate(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-
 class AddCommentView(CreateView):
     model = Comment
     form_class = CommentForm

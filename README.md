@@ -45,7 +45,8 @@ Some future enhancements for sammi's corner would be to :
 * reply to comments
 * create a profile page for users, that can also be updated 
 * add username and image to the nav bar when user is logged in
-* implement a cloud storage service to store my images permanantly because heroku doesn't save the media files
+* enable caplability to update the photo of a blog post
+* COMPLETED -- implement a cloud storage service to store my images permanantly because heroku doesn't save the media files
 
 ## `Getting Started`
 
