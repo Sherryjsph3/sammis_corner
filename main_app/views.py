@@ -11,6 +11,11 @@ from django.urls import reverse
 from.forms import CommentForm, PostForm, UpdateForm, PhotoForm
 from .models import Comment, Post, Photo
 
+
+import sys 
+print(sys.path)
+sys.path.append('/Users/sherryjoseph/.local/share/virtualenvs/python_django_env-B6sxreQl/lib/python3.9/site-packages')
+print(sys.path)
 import boto3
 import uuid
 
