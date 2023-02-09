@@ -32,7 +32,7 @@ class Photo(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Photo for post_id: {self.post_id} @{self.url}"
+        return "Photo for post_id: {self.post_id} @{self.url}"
 
 
 
