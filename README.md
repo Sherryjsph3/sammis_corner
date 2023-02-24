@@ -51,4 +51,4 @@ Some future enhancements for sammi's corner would be to :
 ## `Getting Started`
 
 * [Click here](https://trello.com/b/y1Dy21Kj/sammis-corner) to see the Trello Board!
-<!-- * [Click here](https://fierce-inlet-90378.herokuapp.com/) to see the deployed app! -->
+<!-- * [Click here](https://shrouded-retreat-89485.herokuapp.com/) to see the deployed app! -->
